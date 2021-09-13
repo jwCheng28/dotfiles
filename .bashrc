@@ -58,7 +58,7 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;183m\]\u@MyLaptop\[\033[00m\]:\[\e[38;5;192m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;183m\]\u@MyLaptop\[\033[00m\]:\[\e[38;5;147m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -132,3 +132,7 @@ fi
 
 LS_COLORS='tw=01;04;38;5;99:di=01;04;33;40:ow=01;04;33;40:ex=00;38;5;105:fi=00;38;5;153'
 export LS_COLORS
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#a6a6a6,bg:#000000,hl:#5e79c4 --color=fg+:#ffffff,bg+:#000000,hl+:#bde1ff --color=info:#f6d4ff,prompt:#bfa2db,pointer:#ff91ce --color=marker:#a1ffa9,spinner:#f1d6ff,header:#292929'
